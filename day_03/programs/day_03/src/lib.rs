@@ -1,6 +1,6 @@
 use anchor_lang::prelude::*;
 
-declare_id!("3n2rbjuvX9uKz6BH9wNNUzeG8qUQiDJnQt2Mo37dn4Yp");
+declare_id!("2JtdxDmXA2EdwRHh9916ew92L1apZJAuCbNPjNj6BiRR");
 
 #[program]
 pub mod day_03 {
@@ -35,7 +35,18 @@ pub mod day_03 {
         msg!("Remainder is {}", remainder);
         Ok(())
     }
+
+    pub fn non_empty_account_example(ctx: Context<NonEmptyAccountExample>) -> Result<()> {
+        Ok(())
+    }
 }
 
 #[derive(Accounts)]
 pub struct Initialize {}
+
+#[derive(Accounts)]
+pub struct NonEmptyAccountExample<'info> {
+    signer: Signer<'info>,
+    another_signer: Signer<'info>,
+
+}
