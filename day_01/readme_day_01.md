@@ -1,3 +1,6 @@
+# Setup Anchor and Solana
+Make sure you have installed rust and solana cli before starting.
+
 Initialize and build an Anchor Program
 ```sh
 anchor init day_1 
@@ -53,4 +56,22 @@ anchor test --skip-local-validator
 Clear the cache
 ```sh
 rm -rf ~/.cache/solana/* 
+```
+
+### Debug
+If you encounter an error like:
+```sh
+> anchor build
+...
+=============================================================================
+Error: Deploying program failed: RPC response error -32002: Transaction simulation failed: Error processing Instruction 0: account data too small for instruction [3 log messages]
+There was a problem deploying: Output { status: ExitStatus(unix_wait_status(256)), stdout: "", stderr: "" }.
+```
+Try running the following command:
+```sh
+rm -rf target/
+```
+And rebuild the program
+```sh
+anchor build
 ```
