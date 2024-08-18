@@ -58,7 +58,7 @@ Clear the cache
 rm -rf ~/.cache/solana/* 
 ```
 
-### Debug
+### Error shooting
 If you encounter an error like:
 ```sh
 > anchor build
